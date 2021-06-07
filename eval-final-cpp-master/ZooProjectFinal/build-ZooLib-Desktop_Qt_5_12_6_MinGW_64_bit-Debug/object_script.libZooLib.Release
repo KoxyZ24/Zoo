@@ -1,0 +1,17 @@
+CREATE release\libZooLib.a
+ADDMOD release\animalexception.o
+ADDMOD release\habitatexception.o
+ADDMOD release\zoo.o
+ADDMOD release\zooanimal.o
+ADDMOD release\zooanimals.o
+ADDMOD release\zoobudget.o
+ADDMOD release\zoohabitat.o
+ADDMOD release\zoohabitats.o
+ADDMOD release\zooitems.o
+ADDMOD release\zoomessage.o
+ADDMOD release\zoomessages.o
+ADDMOD release\zooobject.o
+ADDMOD release\zoostock.o
+ADDMOD release\zooturncount.o
+ADDMOD release\zoovendor.o
+SAVE
