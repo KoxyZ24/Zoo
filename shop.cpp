@@ -1,62 +1,61 @@
 #include <iostream>
 
 using namespace std;
-
 void ActionShopFood() {
     bool back = false;
     Game& game = Game::getInstance();
     while(!back) {
         displayMenuHeader("Shop");
         MENU_Action action = chooseAction({
-                                                  {'1', "Meat 1kg (5€)", nullptr},
-                                                  {'2', "Meat 10kg (50€)", nullptr},
-                                                  {'3', "Seeds 1kg (2.5€)", nullptr},
-                                                  {'4', "Seeds 10kg (25€)", nullptr},
-                                                  {'B', "Back to main menu", nullptr}
+                                                  {'1', "Viande 1kg (5€)", nullptr},
+                                                  {'2', "Viande 10kg (50€)", nullptr},
+                                                  {'3', "Graines 1kg (2.5€)", nullptr},
+                                                  {'4', "Graines 10kg (25€)", nullptr},
+                                                  {'B', "Retour Menu Principal", nullptr}
                                           });
 
         if(action.function == nullptr) {
             switch (action.choice) {
                 case '1': {
-                    cout << "You just bought 1kg of meat" << endl;
+                    cout << "Vous avez acheté 1kg de viande" << endl;
                     if(game.bank.money() >= 5) {
-                        game.addFood(1, MEAT);
+                        game.addFood(1, VIANDE);
                         game.bank.decrementMoney(5);
                         break;
                     }
-                    cout << "You dont have enought money" <<endl;
+                    cout << "Vous n'avez pas assé de money" <<endl;
                     break;
                 }
                 case '2': {
-                    cout << "You just bought 10kg of meat" << endl;
+                    cout << "Vous avez acheté 10kg de viande" << endl;
                     if(game.bank.money() >= 50) {
-                        game.addFood(10, MEAT);
+                        game.addFood(10, VIANDE);
                         game.bank.decrementMoney(50);
                         break;
                     }
-                    cout << "You dont have enought money" <<endl;
+                    cout << "Vous n'avez pas assé de money" <<endl;
                     break;
                 }
 
                 case '3': {
-                    cout << "You just bought 1kg of seeds" << endl;
+                    cout << "Vous avez acheté 1kg de graines" << endl;
                     if(game.bank.money() >= 2.5) {
-                        game.addFood(1, SEED);
+                        game.addFood(1, GRAINE);
                         game.bank.decrementMoney(2.5);
                         break;
                     }
-                    cout << "You dont have enought money" <<endl;
+                    cout << "Vous n'avez pas assé de money" <<endl;
                     break;
                 }
 
                 case '4': {
-                    cout << "You just bought 10kg of seeds" << endl;
+                    cout << "Vous avez acheté 10kg de graines" << endl;
                     if(game.bank.money() >= 25) {
-                        game.addFood(10, SEED);
+                        game.addFood(10, GRAINE);
                         game.bank.decrementMoney(25);
                         break;
                     }
-                    cout << "You dont have enought money" <<endl;
+                    cout << "Vous n'avez pas assé d'argent" <<endl;
                     break;
                 }
 
@@ -75,21 +74,21 @@ void ActionShopAnimals() {
     while(!back) {
         displayMenuHeader("Shop");
         MENU_Action action = chooseAction({
-                                                  {'1', "Tiger Male 6 mois (3000€)", nullptr},
-                                                  {'2', "Tiger Female 6 mois (3000€)", nullptr},
-                                                  {'3', "Chicken 6 mois (20€)", nullptr},
-                                                  {'4', "Rooster 6 mois (100€)", nullptr},
-                                                  {'5', "Eagle Male 6 mois (1000€)", nullptr},
-                                                  {'6', "Eagle Female 6 mois (1000€)", nullptr},
-                                                  {'7', "Tiger Male 4 ans (120000€)", nullptr},
-                                                  {'8', "Tiger Female 4 ans (120000€)", nullptr},
-                                                  {'9', "Eagle Male 4 ans (4000€)", nullptr},
-                                                  {'A', "Eagle Female 4 ans (4000€)", nullptr},
-                                                  {'Z', "Tiger Male 14 ans (60000€)", nullptr},
-                                                  {'E', "Tiger Female 14 ans (60000€)", nullptr},
-                                                  {'R', "Eagle Male 14 ans (2000€)", nullptr},
-                                                  {'T', "Eagle Female 14 ans (2000€)", nullptr},
-                                                  {'B', "Back to main menu", nullptr}
+                                                  {'1', "Tigre Male 6 mois (3000€)", nullptr},
+                                                  {'2', "Tigre Female 6 mois (3000€)", nullptr},
+                                                  {'3', "Poule 6 mois (20€)", nullptr},
+                                                  {'4', "Coq 6 mois (100€)", nullptr},
+                                                  {'5', "Aigle Male 6 mois (1000€)", nullptr},
+                                                  {'6', "Aigle Female 6 mois (1000€)", nullptr},
+                                                  {'7', "Tigre Male 4 ans (120000€)", nullptr},
+                                                  {'8', "Tigre Female 4 ans (120000€)", nullptr},
+                                                  {'9', "Aigle Male 4 ans (4000€)", nullptr},
+                                                  {'A', "Aigle Female 4 ans (4000€)", nullptr},
+                                                  {'Z', "Tigre Male 14 ans (60000€)", nullptr},
+                                                  {'E', "Tigre Female 14 ans (60000€)", nullptr},
+                                                  {'R', "Aigle Male 14 ans (2000€)", nullptr},
+                                                  {'T', "Aigle Female 14 ans (2000€)", nullptr},
+                                                  {'B', "Retour Menu Principal", nullptr}
                                           });
 
         if(action.function == nullptr) {
@@ -99,7 +98,7 @@ void ActionShopAnimals() {
             double price = 0.0;
             switch (action.choice) {
                 case '1': {
-                    cout << "You just bought a 6 month old male tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre male de 6 mois" << endl;
                     race = TIGER;
                     gender = MALE;
                     age = 30*6;
@@ -108,7 +107,7 @@ void ActionShopAnimals() {
                 }
 
                 case '2': {
-                    cout << "You just bought a 6 month old female tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre femelle de 6 mois" << endl;
                     race = TIGER;
                     gender = FEMALE;
                     age = 30*6;
@@ -116,7 +115,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case '3': {
-                    cout << "You just bought a 6 month old chicken" << endl;
+                    cout << "Vous venez d'acheté une poule de 6 mois" << endl;
                     race = CHICKEN;
                     gender = FEMALE;
                     age = 30*6;
@@ -125,7 +124,7 @@ void ActionShopAnimals() {
                 }
 
                 case '4': {
-                    cout << "You just bought a 6 month old rooster" << endl;
+                    cout << "Vous venez d'acheté un coq de 6 mois" << endl;
                     race = CHICKEN;
                     gender = FEMALE;
                     age = 30*6;
@@ -134,7 +133,7 @@ void ActionShopAnimals() {
                 }
 
                 case '5': {
-                    cout << "You just bought a 6 month old male eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle male de 6 mois" << endl;
                     race = EAGLE;
                     gender = MALE;
                     age = 30*6;
@@ -142,7 +141,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case '6': {
-                    cout << "You just bought a 6 month old female eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle femelle de 6 mois" << endl;
                     race = EAGLE;
                     gender = FEMALE;
                     age = 30*6;
@@ -150,7 +149,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case '7': {
-                    cout << "You just bought a 4 years old male tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre male de 4 ans" << endl;
                     race = TIGER;
                     gender = MALE;
                     age = 4*360;
@@ -159,7 +158,7 @@ void ActionShopAnimals() {
                 }
 
                 case '8': {
-                    cout << "You just bought a 4 years old female tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre femelle de 4 ans" << endl;
                     race = TIGER;
                     gender = FEMALE;
                     age = 4*360;
@@ -167,7 +166,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case '9': {
-                    cout << "You just bought a 4 years old male eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle male de 4 ans" << endl;
                     race = EAGLE;
                     gender = MALE;
                     age = 4*360;
@@ -175,7 +174,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case 'A': {
-                    cout << "You just bought a 4 years old female eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle femelle de 4 ans" << endl;
                     race = EAGLE;
                     gender = FEMALE;
                     age = 4*360;
@@ -183,7 +182,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case 'Z': {
-                    cout << "You just bought a 14 years old male tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre male de 14 ans" << endl;
                     race = TIGER;
                     gender = MALE;
                     age = 14*360;
@@ -191,7 +190,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case 'E': {
-                    cout << "You just bought a 14 years old female tiger" << endl;
+                    cout << "Vous venez d'acheté un tigre femelle de 14 ans" << endl;
                     race = TIGER;
                     gender = FEMALE;
                     age = 14*360;
@@ -199,7 +198,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case 'R': {
-                    cout << "You just bought a 14 years old male eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle male de 14 ans" << endl;
                     race = EAGLE;
                     gender = MALE;
                     age = 14*360;
@@ -207,7 +206,7 @@ void ActionShopAnimals() {
                     break;
                 }
                 case 'T': {
-                    cout << "You just bought a 14 years old female eagle" << endl;
+                    cout << "Vous venez d'acheté un aigle femelle de 14 ans" << endl;
                     race = EAGLE;
                     gender = FEMALE;
                     age = 14*360;
@@ -224,7 +223,7 @@ void ActionShopAnimals() {
                     game.addAnimal(race, gender, age);
                     game.bank.decrementMoney(price);
                 }else{
-                    cout << "You dont have enought money to buy this animal" <<endl;
+                    cout << "Vous n'avez pas assez d'argent pour cet animal" <<endl;
                 }
             }
         }
