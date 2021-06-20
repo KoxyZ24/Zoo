@@ -21,5 +21,5 @@ public:
 
     virtual string typeHouse();
 };
-
+// manque habitat au cas par cas
 #endif //ZOOPROJECT_IHABITAT_H
