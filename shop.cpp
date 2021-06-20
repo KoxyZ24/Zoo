@@ -34,7 +34,7 @@ void ActionShopFood() {
                         game.bank.decrementMoney(50);
                         break;
                     }
-                    cout << "Vous n'avez pas assé de money" <<endl;
+                    cout << "Vous n'avez pas assez d'argent " <<endl;
                     break;
                 }
 
@@ -45,7 +45,7 @@ void ActionShopFood() {
                         game.bank.decrementMoney(2.5);
                         break;
                     }
-                    cout << "Vous n'avez pas assé de money" <<endl;
+                    cout << "Vous n'avez pas assez d'argent" <<endl;
                     break;
                 }
 
