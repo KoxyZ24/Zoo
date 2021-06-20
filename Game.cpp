@@ -49,5 +49,3 @@ string Tiger::toString() {
     return str;
 }
 
-Bank::Bank(int Money)
-        :
