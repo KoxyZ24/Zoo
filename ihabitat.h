@@ -1,5 +1,3 @@
-
-
 #ifndef ZOOPROJECT_IHABITAT_H
 #define ZOOPROJECT_IHABITAT_H
 
