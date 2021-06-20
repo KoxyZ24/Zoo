@@ -48,3 +48,6 @@ string Tiger::toString() {
     sprintf(str, "Tiger (%d days old)", age());
     return str;
 }
+
+Bank::Bank(int Money)
+        :
