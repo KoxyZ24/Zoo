@@ -1,5 +1,6 @@
 #include <iostream>
 #include "shop.h"
+#include "zoo.h"
 
 
 using namespace std;
